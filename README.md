@@ -19,7 +19,7 @@
 	<th width="5%"><center>表示方法</center></th><th width="19%"><center>Voxel</center></th><th width="19%"><center>Point Cloud</center></th><th width="19%"><center>Polygon Mesh</center></th><th width="19%"><center>Occupancy Function</center></th><th width="19%"><center>Signed Distance Function</center></th>                 
  </tr>
 <tr>         
-  <td>表示图像</td> <td><img src="figures/voxel.png"/></td><td><img src="figures/pointcloud.png"/></td><td><img src="figures/polygonmesh.png"/></td><td><img src="figures/occupancy.png"/></td><td><img src="figures/sdf.png"/></td>   
+  <td>表示图像</td> <td><img src="./figures/voxel.png"/></td><td><img src="./figures/pointcloud.png"/></td><td><img src="./figures/polygonmesh.png"/></td><td><img src="./figures/occupancy.png"/></td><td><img src="./figures/sdf.png"/></td>   
  </tr>
 <tr>         
   <td>表示原理</td> <td>体素用规则的立方体表示3D物体，体素是数据在三维空间中的最小分割单位，类似于2D图像中的像素</td><td>点云将多面体表示为三维空间中点的集合，一般用激光雷达或深度相机扫描后得到点云数据</td><td>多边形网格将多面体表示为顶点与面片的集合，包含了物体表面的拓扑信息</td><td>occupancy function 将物体表示为一个占有函数，即空间中每个点是否在表面上</td><td>SDF 将物体表示为符号距离函数，即空间中每个点距离表面的距离</td>   
@@ -28,6 +28,7 @@
   <td>优缺点</td> <td>+ 规则表示，容易送入网络学习 <br/>+ 可以处理任意拓扑结构 <br/>- 随着分辨率增加，内存呈立方级增长<br/>- 物体表示不够精细<br/>- 纹理不友好</td><td>+ 容易获取<br/>+ 可以处理任意拓扑结构<br/>- 缺少点与点之间连接关系<br/>- 物体表示不够精细<br/>- 纹理不友好</td><td>+ 高质量描述3D几何结构<br/>+ 内存占有较少 <br/>+ 纹理友好<br/>-  不同物体类别需要不同的 mesh 模版<br/>- 网络较难学习</td><td>+ 可以精细建模细节，理论上分辨率无穷<br/>+ 内存占有少 <br/>+ 网络较易学习 <br/>- 需后处理得到显式几何结构</td><td>+ 可以精细建模细节，理论上分辨率无穷<br/>+ 内存占有少 <br/>+ 网络较易学习 <br/>- 需后处理得到显式几何结构</td>   
  </tr>  
 </table>
+
 
 
 
@@ -355,7 +356,6 @@
     </td>
 	</tr>
 </table>
-
 
 
 ---------------
